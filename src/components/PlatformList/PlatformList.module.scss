@@ -1,0 +1,9 @@
+@use '../../variables.scss' as variables;
+
+.iconsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    font-size: large;
+    color: variables.$dark-gray;
+}

@@ -4,6 +4,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { Game } from '../../hooks/useGames';
+import PlatformList from '../PlatformList/PlatformList';
 
 interface Props {
     game: Game;
@@ -11,7 +12,7 @@ interface Props {
 
 export default function GameCard({ game }: Props) {
     return (
-        <Card sx={{ width: 200, height: 250 }}>
+        <Card sx={{ width: 200 }}>
             <CardActionArea>
                 <CardMedia
                     component="img"
@@ -23,6 +24,8 @@ export default function GameCard({ game }: Props) {
                     <Typography gutterBottom variant="h5" component="div">
                         {game.name}
                     </Typography>
+
+                    <PlatformList platforms={game.parent_platforms.map(p => p.platform)} ></PlatformList>
                 </CardContent>
             </CardActionArea>
         </Card>

@@ -1,5 +1,5 @@
 import GameCard from '../GameCard/GameCard';
-import styles from './GameGrid.module.css'
+import styles from './GameGrid.module.scss'
 import useGames from '../../hooks/useGames';
 
 
