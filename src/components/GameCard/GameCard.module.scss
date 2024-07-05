@@ -1,0 +1,17 @@
+@use '../../variables.scss' as variables;
+
+.gameDetail
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.metacritic
+{
+    color: white;
+    border: 1px solid variables.$light-gray;
+    border-radius: variables.$card-border-radios;
+    background-color: variables.$dark-gray;
+    padding: 2.5px;
+}

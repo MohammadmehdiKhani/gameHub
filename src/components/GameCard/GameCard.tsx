@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { Game } from '../../hooks/useGames';
 import PlatformList from '../PlatformList/PlatformList';
+import styles from './GameCard.module.scss'
 
 interface Props {
     game: Game;
@@ -12,7 +13,7 @@ interface Props {
 
 export default function GameCard({ game }: Props) {
     return (
-        <Card sx={{ width: 200 }}>
+        <Card sx={{ width: 300 }}>
             <CardActionArea>
                 <CardMedia
                     component="img"
@@ -24,8 +25,11 @@ export default function GameCard({ game }: Props) {
                     <Typography gutterBottom variant="h5" component="div">
                         {game.name}
                     </Typography>
-
-                    <PlatformList platforms={game.parent_platforms.map(p => p.platform)} ></PlatformList>
+                    <hr></hr>
+                    <div className={styles.gameDetail}>
+                        <PlatformList platforms={game.parent_platforms.map(p => p.platform)} ></PlatformList>
+                        <div className={styles.metacritic}>{game.metacritic}</div>
+                    </div>
                 </CardContent>
             </CardActionArea>
         </Card>
