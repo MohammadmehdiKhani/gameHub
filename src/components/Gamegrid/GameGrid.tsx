@@ -6,6 +6,8 @@ import useGames from '../../hooks/useGames';
 export default function GameGrid() {
     const { games, error } = useGames()
 
+    console.log(error);
+    
     return (
         <div className={styles.gameGrid}>
             {games.map(game => <GameCard game={game}></GameCard>)}
