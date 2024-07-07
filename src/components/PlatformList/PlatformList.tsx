@@ -11,7 +11,6 @@ interface Props {
 export default function PlatformList({ platforms }: Props) {
     const arrayOfPlatformNames = platforms.map(platform => platform.name)
 
-    console.log(arrayOfPlatformNames)
     return (
         <div className={styles.iconsContainer}>
             {arrayOfPlatformNames.includes('PC') && <FaWindows />}
