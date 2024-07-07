@@ -6,17 +6,14 @@ import React from 'react';
 
 
 export default function GameGrid() {
-    const { games, error, loading } = useGames()
+    const { games, loading } = useGames()
     const skeletons = [1,2,3,4,5,6,7,8,9,10,11,12]
-
-    console.log(error);
-    console.log(loading);
     
     return (
         <React.Fragment>
             {
                 loading && <div className={styles.gameGrid}>
-                    {skeletons.map(skeleton => <GameCardSkeleton></GameCardSkeleton>)}
+                    {skeletons.map((skeleton) => <GameCardSkeleton key={skeleton}></GameCardSkeleton>)}
                 </div>
             }
 
