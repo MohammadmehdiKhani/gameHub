@@ -6,6 +6,7 @@ import { CardActionArea } from '@mui/material';
 import { Game } from '../../hooks/useGames';
 import PlatformList from '../PlatformList/PlatformList';
 import styles from './GameCard.module.scss'
+import getCroppedImageUrl from '../../services/image-url';
 
 interface Props {
     game: Game;
@@ -18,7 +19,7 @@ export default function GameCard({ game }: Props) {
                 <CardMedia
                     component="img"
                     height="140"
-                    image={game.background_image}
+                    image={getCroppedImageUrl(game.background_image)}
                     alt="card title"
                 />
                 <CardContent>
