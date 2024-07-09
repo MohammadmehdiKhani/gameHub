@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+body {
+  font-family: "Roboto", sans-serif;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -39,4 +43,34 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.genresList {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: larger;
+}
+
+.gameGrid {
+  width: 85%;
+}
+
+
+@media (max-width: 1290px) {
+  .genresList{
+    display: none;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+  }
 }

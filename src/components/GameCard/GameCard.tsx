@@ -14,11 +14,11 @@ interface Props {
 
 export default function GameCard({ game }: Props) {
     return (
-        <Card sx={{ width: 300 }}>
+        <Card sx={{ width: 400 }}>
             <CardActionArea>
                 <CardMedia
                     component="img"
-                    height="140"
+                    height="250"
                     image={getCroppedImageUrl(game.background_image)}
                     alt="card title"
                 />
