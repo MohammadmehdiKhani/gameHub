@@ -12,6 +12,7 @@ export default function useData<T>(endpoint: string) {
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true)
     apiClient
       .get<FetchResponse<T>>(endpoint)
       .then((res) => {
