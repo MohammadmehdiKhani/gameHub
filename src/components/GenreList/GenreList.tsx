@@ -1,20 +1,24 @@
 import { CircularProgress } from "@mui/material";
-import useGenres from "../../hooks/useGenres";
+import useGenres, { Genre } from "../../hooks/useGenres";
 import styles from "./GenreList.module.scss";
-import React, { useEffect } from "react";
+import React from "react";
 
-export default function GenreList() {
+interface Props {
+  onSelectedGenre: (genre: Genre) => void;
+}
+
+export default function GenreList({ onSelectedGenre }: Props) {
   const { data: genres, isLoading } = useGenres();
 
   return (
     <React.Fragment>
       {isLoading ? (
         <div>
-          <CircularProgress disableShrink  />
+          <CircularProgress disableShrink />
         </div>
       ) : (
         genres.map((g) => (
-          <div className={styles.genre}>
+          <div className={styles.genre} onClick={() => onSelectedGenre(g)}>
             <img src={g.image_background} className={styles.genreImage} />
             <div>{g.name}</div>
           </div>
