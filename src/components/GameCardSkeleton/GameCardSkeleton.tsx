@@ -7,10 +7,10 @@ import styles from './GameCardSkeleton.module.scss'
 
 export default function GameCardSkeleton() {
     return (
-        <Card sx={{ width: 300 }}>
+        <Card sx={{ width: 400 }}>
             <CardActionArea>
                 <CardMedia>
-                    <Skeleton sx={{ height: 140 }} animation="wave" variant="rectangular" />
+                    <Skeleton sx={{ height: 250 }} animation="wave" variant="rectangular" />
                 </CardMedia>
                 <CardContent>
                     <Skeleton sx={{ fontSize: "1.5rem", width: "100%" }} variant="rounded" />
