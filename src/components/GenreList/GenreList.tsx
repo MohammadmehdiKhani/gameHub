@@ -5,9 +5,10 @@ import React from "react";
 
 interface Props {
   onSelectedGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null
 }
 
-export default function GenreList({ onSelectedGenre }: Props) {
+export default function GenreList({ onSelectedGenre, selectedGenre }: Props) {
   const { data: genres, isLoading } = useGenres();
 
   return (
@@ -18,7 +19,7 @@ export default function GenreList({ onSelectedGenre }: Props) {
         </div>
       ) : (
         genres.map((g) => (
-          <div className={styles.genre} onClick={() => onSelectedGenre(g)}>
+          <div className={g.id === selectedGenre?.id? styles.selectedGenre :styles.genre} onClick={() => onSelectedGenre(g)}>
             <img src={g.image_background} className={styles.genreImage} />
             <div>{g.name}</div>
           </div>

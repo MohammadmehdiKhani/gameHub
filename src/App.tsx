@@ -5,7 +5,7 @@ import "@fontsource/roboto/700.css";
 import GameGrid from "./components/Gamegrid/GameGrid";
 import GenreList from "./components/GenreList/GenreList";
 import styles from "./App.module.scss";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Genre } from "./hooks/useGenres";
 
 function App() {
@@ -17,11 +17,12 @@ function App() {
         <div className={styles.genresList}>
           <GenreList
             onSelectedGenre={(genre: Genre) => setSelectedGenre(genre)}
+            selectedGenre={selectedGenre}
           />
         </div>
 
         <div className={styles.gameGrid}>
-          <GameGrid selectedGenre={selectedGenre}/>
+          <GameGrid selectedGenre={selectedGenre} />
         </div>
       </div>
     </>

@@ -13,13 +13,20 @@
 }
 
 .genre {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.selectedGenre {
+  @extend .genre;
+  background-color: variables.$light-gray;
+  font-size: larger;
 }
 
 .genreImage {
-    width: 70px;
-    border-radius: 10px;
+  width: 70px;
+  border-radius: 10px;
 }
