@@ -2,6 +2,7 @@
 
 .gameGrid {
     background-color: variables.$light-gray;
+    border: 1px solid variables.$soft-border;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 20px;

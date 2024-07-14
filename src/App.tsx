@@ -7,6 +7,7 @@ import GenreList from "./components/GenreList/GenreList";
 import styles from "./App.module.scss";
 import { useState } from "react";
 import { Genre } from "./hooks/useGenres";
+import PlatformSelector from "./components/PlatformSelector/PlatformSelector";
 
 function App() {
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
@@ -22,6 +23,7 @@ function App() {
         </div>
 
         <div className={styles.gameGrid}>
+          <PlatformSelector></PlatformSelector>
           <GameGrid selectedGenre={selectedGenre} />
         </div>
       </div>

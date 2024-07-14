@@ -1,0 +1,38 @@
+@use "../../variables.scss" as variables;
+
+.gameGrid {
+  background-color: variables.$light-gray;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.genre {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.selectedGenre {
+  @extend .genre;
+  background-color: variables.$light-gray;
+  font-size: larger;
+}
+
+.genreImage {
+  width: 70px;
+  border-radius: 10px;
+}
+
+.platformsContainer
+{
+  width: 200px;
+  margin-bottom: 10px;
+}

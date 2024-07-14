@@ -1,3 +1,5 @@
+@use "./variables.scss" as variables;
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -7,6 +9,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  background-color: variables.$light-gray;
 }
 
 .logo {
