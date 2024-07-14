@@ -5,8 +5,13 @@ import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import usePlatforms from "../../hooks/usePlatforms";
 import styles from "./PlatformSelector.module.scss";
+import { Platform } from "../../hooks/useGames";
 
-export default function PlatformSelector() {
+interface Props {
+  onSelectPlatform: (platform: Platform) => void;
+}
+
+export default function PlatformSelector({ onSelectPlatform }: Props) {
   const { data: platforms } = usePlatforms();
   const [age, setAge] = React.useState("");
 
@@ -26,7 +31,9 @@ export default function PlatformSelector() {
           onChange={handleChange}
         >
           {platforms.map((p) => (
-            <MenuItem value={p.name}>{p.name}</MenuItem>
+            <MenuItem  key={p.id} value={p.id} onClick={() => onSelectPlatform(p)}>
+              {p.name}
+            </MenuItem>
           ))}
         </Select>
       </FormControl>
