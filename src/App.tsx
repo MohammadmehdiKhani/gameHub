@@ -9,6 +9,7 @@ import { useState } from "react";
 import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector/PlatformSelector";
 import { Platform } from "./hooks/useGames";
+import SortSelector from "./components/SortSelctor/SortSelector";
 
 export interface gameQuery {
   genre: Genre | null;
@@ -31,11 +32,14 @@ function App() {
         </div>
 
         <div className={styles.gameGrid}>
-          <PlatformSelector
-            onSelectPlatform={(platform: Platform) =>
-              setGameQuery({ ...gameQuery, platform })
-            }
-          ></PlatformSelector>
+          <div className={styles.selectorsRow}>
+            <PlatformSelector
+              onSelectPlatform={(platform: Platform) =>
+                setGameQuery({ ...gameQuery, platform })
+              }
+            ></PlatformSelector>
+            <SortSelector></SortSelector>
+          </div>
           <GameGrid gameQuery={gameQuery} />
         </div>
       </div>

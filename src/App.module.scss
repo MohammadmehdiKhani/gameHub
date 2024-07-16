@@ -66,6 +66,11 @@ body {
   width: 85%;
 }
 
+.selectorsRow
+{
+  display: flex;
+  gap: 10px;
+}
 
 @media (max-width: 1290px) {
   .genresList{
