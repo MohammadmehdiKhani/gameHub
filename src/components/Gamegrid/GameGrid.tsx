@@ -1,9 +1,8 @@
 import GameCard from "../GameCard/GameCard";
 import styles from "./GameGrid.module.scss";
-import useGames, { Platform } from "../../hooks/useGames";
+import useGames from "../../hooks/useGames";
 import GameCardSkeleton from "../GameCardSkeleton/GameCardSkeleton";
 import React from "react";
-import { Genre } from "../../hooks/useGenres";
 import { gameQuery } from "../../App";
 
 interface Props {
