@@ -14,6 +14,7 @@ import SortSelector from "./components/SortSelctor/SortSelector";
 export interface gameQuery {
   genre: Genre | null;
   platform: Platform | null;
+  sortOrder: string;
 }
 
 function App() {
@@ -34,11 +35,11 @@ function App() {
         <div className={styles.gameGrid}>
           <div className={styles.selectorsRow}>
             <PlatformSelector
-              onSelectPlatform={(platform: Platform) =>
+              selectedPlatform={gameQuery.platform} onSelectPlatform={(platform: Platform) =>
                 setGameQuery({ ...gameQuery, platform })
               }
             ></PlatformSelector>
-            <SortSelector></SortSelector>
+            <SortSelector selectedSortOrder={gameQuery.sortOrder} onSelectSortOrder={(sortOrder) => setGameQuery({...gameQuery, sortOrder})}></SortSelector>
           </div>
           <GameGrid gameQuery={gameQuery} />
         </div>

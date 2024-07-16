@@ -1,23 +1,21 @@
-import * as React from "react";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Select from "@mui/material/Select";
 import usePlatforms from "../../hooks/usePlatforms";
 import styles from "./PlatformSelector.module.scss";
 import { Platform } from "../../hooks/useGames";
 
 interface Props {
   onSelectPlatform: (platform: Platform) => void;
+  selectedPlatform: Platform | null;
 }
 
-export default function PlatformSelector({ onSelectPlatform }: Props) {
+export default function PlatformSelector({
+  onSelectPlatform,
+  selectedPlatform,
+}: Props) {
   const { data: platforms } = usePlatforms();
-  const [age, setAge] = React.useState("");
-
-  const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value as string);
-  };
 
   return (
     <div className={styles.platformsContainer}>
@@ -26,12 +24,15 @@ export default function PlatformSelector({ onSelectPlatform }: Props) {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={age}
+          value={selectedPlatform?.id}
           label="Platform"
-          onChange={handleChange}
         >
           {platforms.map((p) => (
-            <MenuItem  key={p.id} value={p.id} onClick={() => onSelectPlatform(p)}>
+            <MenuItem
+              key={p.id}
+              value={p.id}
+              onClick={() => onSelectPlatform(p)}
+            >
               {p.name}
             </MenuItem>
           ))}

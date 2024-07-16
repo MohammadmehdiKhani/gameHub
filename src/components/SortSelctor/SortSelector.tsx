@@ -8,10 +8,23 @@ import styles from "./SortSelector.module.scss";
 import { Platform } from "../../hooks/useGames";
 
 interface Props {
-  onSelectPlatform: (platform: Platform) => void;
+  onSelectSortOrder: (sortOrder: string) => void;
+  selectedSortOrder: string;
 }
 
-export default function SortSelector() {
+export default function SortSelector({
+  onSelectSortOrder,
+  selectedSortOrder,
+}: Props) {
+  const sortOrders = [
+    { value: " ", label: "Relevance" },
+    { value: "-added", label: "Date added" },
+    { value: "name", label: "Name" },
+    { value: "-released", label: "Release date" },
+    { value: "-metacritic", label: "Popularity" },
+    { value: "-rating", label: "Average rating" },
+  ];
+
   return (
     <div className={styles.sortSelectorContainer}>
       <FormControl fullWidth>
@@ -19,13 +32,19 @@ export default function SortSelector() {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          // value={age}
+          value={selectedSortOrder}
           label="Order by"
           // onChange={handleChange}
         >
-          <MenuItem value={1}>YO 1</MenuItem>
-          <MenuItem value={2}>YO 2</MenuItem>
-          <MenuItem value={3}>YO 3</MenuItem>
+          {sortOrders.map((s) => (
+            <MenuItem
+              key={s.value}
+              value={s.value}
+              onClick={() => onSelectSortOrder(s.value)}
+            >
+              {s.label}
+            </MenuItem>
+          ))}
         </Select>
       </FormControl>
     </div>
