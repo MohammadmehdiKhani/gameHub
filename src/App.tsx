@@ -10,6 +10,7 @@ import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector/PlatformSelector";
 import { Platform } from "./hooks/useGames";
 import SortSelector from "./components/SortSelctor/SortSelector";
+import SearchInput from "./components/searchInput/SearchInput";
 
 export interface gameQuery {
   genre: Genre | null;
@@ -35,11 +36,18 @@ function App() {
         <div className={styles.gameGrid}>
           <div className={styles.selectorsRow}>
             <PlatformSelector
-              selectedPlatform={gameQuery.platform} onSelectPlatform={(platform: Platform) =>
+              selectedPlatform={gameQuery.platform}
+              onSelectPlatform={(platform: Platform) =>
                 setGameQuery({ ...gameQuery, platform })
               }
             ></PlatformSelector>
-            <SortSelector selectedSortOrder={gameQuery.sortOrder} onSelectSortOrder={(sortOrder) => setGameQuery({...gameQuery, sortOrder})}></SortSelector>
+            <SortSelector
+              selectedSortOrder={gameQuery.sortOrder}
+              onSelectSortOrder={(sortOrder) =>
+                setGameQuery({ ...gameQuery, sortOrder })
+              }
+            ></SortSelector>
+            <SearchInput></SearchInput>
           </div>
           <GameGrid gameQuery={gameQuery} />
         </div>
