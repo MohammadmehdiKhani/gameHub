@@ -11,6 +11,7 @@ import PlatformSelector from "./components/PlatformSelector/PlatformSelector";
 import { Platform } from "./hooks/useGames";
 import SortSelector from "./components/SortSelctor/SortSelector";
 import SearchInput from "./components/searchInput/SearchInput";
+import GameGridHeading from "./components/GameGridHeading/GameGridHeading";
 
 export interface gameQuery {
   genre: Genre | null;
@@ -35,6 +36,7 @@ function App() {
         </div>
 
         <div className={styles.gameGrid}>
+          <GameGridHeading gameQuery={gameQuery} />
           <div className={styles.selectorsRow}>
             <PlatformSelector
               selectedPlatform={gameQuery.platform}
