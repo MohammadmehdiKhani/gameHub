@@ -16,6 +16,7 @@ export interface gameQuery {
   genre: Genre | null;
   platform: Platform | null;
   sortOrder: string;
+  searchText: string;
 }
 
 function App() {
@@ -47,7 +48,11 @@ function App() {
                 setGameQuery({ ...gameQuery, sortOrder })
               }
             ></SortSelector>
-            <SearchInput></SearchInput>
+            <SearchInput
+              setSearchedText={(text: string) =>
+                setGameQuery({ ...gameQuery, searchText: text })
+              }
+            ></SearchInput>
           </div>
           <GameGrid gameQuery={gameQuery} />
         </div>
