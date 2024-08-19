@@ -18,7 +18,7 @@ export default function GenreList({ onSelectedGenre, selectedGenre }: Props) {
           <CircularProgress disableShrink />
         </div>
       ) : (
-        genres.map((g) => (
+        genres?.results.map((g) => (
           <div className={g.id === selectedGenre?.id? styles.selectedGenre :styles.genre} onClick={() => onSelectedGenre(g)}>
             <img src={g.image_background} className={styles.genreImage} />
             <div>{g.name}</div>
