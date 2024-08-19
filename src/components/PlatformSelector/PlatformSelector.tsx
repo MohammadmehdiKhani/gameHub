@@ -27,7 +27,7 @@ export default function PlatformSelector({
           value={selectedPlatform?.id}
           label="Platform"
         >
-          {platforms.map((p) => (
+          {platforms?.results.map((p) => (
             <MenuItem
               key={p.id}
               value={p.id}
