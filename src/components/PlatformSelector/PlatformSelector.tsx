@@ -2,9 +2,8 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import usePlatforms from "../../hooks/usePlatforms";
+import usePlatforms, { Platform } from "../../hooks/usePlatforms";
 import styles from "./PlatformSelector.module.scss";
-import { Platform } from "../../hooks/useGames";
 
 interface Props {
   onSelectPlatform: (platform: Platform) => void;
