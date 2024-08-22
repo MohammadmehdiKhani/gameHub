@@ -8,10 +8,10 @@ import styles from "./App.module.scss";
 import { useState } from "react";
 import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector/PlatformSelector";
-import { Platform } from "./hooks/useGames";
 import SortSelector from "./components/SortSelctor/SortSelector";
 import SearchInput from "./components/searchInput/SearchInput";
 import GameGridHeading from "./components/GameGridHeading/GameGridHeading";
+import { Platform } from "./hooks/usePlatforms";
 
 export interface gameQuery {
   genre: Genre | null;
